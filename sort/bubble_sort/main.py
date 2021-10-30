@@ -10,9 +10,9 @@ def getNums() -> List[int]:
 
 
 def bubble_sort(numbers: List[int]) -> List[int]:
-    len_numbers = len(numbers)
-    for i in range(len_numbers-1):
-        for j in range(len_numbers-i-1):
+    nums_length = len(numbers)
+    for i in range(nums_length-1):
+        for j in range(nums_length-i-1):
             if numbers[j] >= numbers[j+1]:
                 numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
     return numbers
