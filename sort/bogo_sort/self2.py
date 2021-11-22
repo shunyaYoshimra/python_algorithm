@@ -8,17 +8,16 @@ def getNums() -> List[int]:
     return nums
 
 
-def in_order(numbers: List[int]) -> List[int]:
+def in_order(numbers: List[int]) -> bool:
     nums_length = len(numbers)
     for i in range(nums_length-1):
-        if numbers[i] > numbers[i+1]:
+        if numbers[i] > numbers[i + 1]:
             return False
-
     return True
 
 
 def bogo_sort(numbers: List[int]) -> List[int]:
-    while not in_order(numbers):
+    while in_order(numbers) == False:
         random.shuffle(numbers)
     return numbers
 
