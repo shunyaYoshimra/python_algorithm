@@ -1,5 +1,3 @@
-
-
 from typing import Any
 
 
@@ -10,8 +8,7 @@ class Node(object):
         self.right = None
 
 
-class BinarySearchTree(object):
-
+class BinarySearchTree():
     def __init__(self) -> None:
         self.root = None
 
@@ -37,7 +34,7 @@ class BinarySearchTree(object):
                 _inorder(node.left)
                 print(node.value)
                 _inorder(node.right)
-            _inorder(self.root)
+        _inorder(self.root)
 
     def search(self, value: Any) -> bool:
         def _search(node: Node, value: Any) -> bool:
@@ -51,44 +48,10 @@ class BinarySearchTree(object):
                 return _search(node.right, value)
         return _search(self.root, value)
 
-    def min_value(self, node: Node) -> Node:
-        current = node
-        while current.left is not None:
-            current = current.left
-        return current
 
-    def remove(self, value: Any) -> None:
-        def _remove(node: Node, value: Any) -> Node:
-            if node is None:
-                return node
-            if value < node.value:
-                node.left = _remove(node.left, value)
-            elif value > node.value:
-                node.right = _remove(node.right, value)
-            else:
-                if node.left is None:
-                    return node.right
-                elif node.right is None:
-                    return node.left
-
-                temp = self.min_value(node.right)
-                node.value = temp.value
-                node.right = _remove(node.right, temp.value)
-            return node
-        _remove(self.root, value)
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     binary_tree = BinarySearchTree()
-    binary_tree.insert(3)
-    binary_tree.insert(6)
-    binary_tree.insert(5)
-    binary_tree.insert(7)
+    binary_tree.insert(4)
     binary_tree.insert(1)
-    binary_tree.insert(10)
-    binary_tree.insert(2)
-    binary_tree.inorder()
-    print(binary_tree.search(4))
-    print("##################")
-    binary_tree.remove(6)
-    binary_tree.inorder()
+    print(binary_tree.root.value)
+    print(binary_tree.root.value)
