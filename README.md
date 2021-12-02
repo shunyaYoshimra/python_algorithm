@@ -1,2 +1,2 @@
-# python333_algorithm
-python3でアルゴリズムを勉強する用のレポジトリです！
+# python3_algorithm
+python3でアルゴリズムを勉強する用のレポジトリです!
