@@ -40,3 +40,4 @@ def merge_sort(numbers: List[int]) -> List[int]:
 if __name__ == '__main__':
     nums = getNums()
     print(merge_sort(nums))
+    print(merge_sort(nums))
